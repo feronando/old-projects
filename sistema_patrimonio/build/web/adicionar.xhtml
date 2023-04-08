@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Sistema de Gerenciamento Patrimonial</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid>
+                <h:outputLabel value="Código do Patrimônio:"/>
+                <h:inputText id="codPatrimonio" value="#{Navegacao.pat.codPatrimonio}" required="true" requiredMessage="Campo Obrigatório">
+                    <f:convertNumber type="number"/>
+                </h:inputText>
+                <h:message for="codPatrimonio"/>
+
+                <h:outputLabel value="Descrição do Patrimônio:"/>
+                <h:inputText id="descrição" value="${Navegacao.pat.descricao}" required="true" requiredMessage="Campo Obrigatório"/>
+                <h:message for="descrição"/>
+
+                <h:outputLabel value="Valor do Patrimônio:"/>
+                <h:inputText id="valorPatrimonio" value="#{Navegacao.pat.valorPatrimonio}" required="true" requiredMessage="Campo Obrigatório">
+                    <f:convertNumber currencyCode="R$" type="currency"/>
+                </h:inputText>    
+                <h:message for="valorPatrimonio"/>
+
+                <h:outputLabel value="Setor do Patrimônio:"/>
+                <h:selectOneMenu value="#{Navegacao.pat.codSetor}" required="true" requiredMessage="Campo Obrigatório">
+                    <f:selectItem itemValue="#{1}" itemLabel="Apodi"/>
+                    <f:selectItem itemValue="#{2}" itemLabel="Caicó"/>
+                    <f:selectItem itemValue="#{3}" itemLabel="Canguaretama"/>
+                    <f:selectItem itemValue="#{4}" itemLabel="Ceará-Mirim"/>
+                    <f:selectItem itemValue="#{5}" itemLabel="Currais Novos"/>
+                    <f:selectItem itemValue="#{6}" itemLabel="Ipanguaçu"/>
+                    <f:selectItem itemValue="#{7}" itemLabel="João Câmara"/>
+                    <f:selectItem itemValue="#{8}" itemLabel="Lajes"/>
+                    <f:selectItem itemValue="#{9}" itemLabel="Macau"/>
+                    <f:selectItem itemValue="#{10}" itemLabel="Mossoró"/>
+                    <f:selectItem itemValue="#{11}" itemLabel="Natal – Central"/>
+                    <f:selectItem itemValue="#{12}" itemLabel="Natal – Cidade Alta"/>
+                    <f:selectItem itemValue="#{13}" itemLabel="Natal – Zona Norte"/>
+                    <f:selectItem itemValue="#{14}" itemLabel="Nova Cruz"/>
+                    <f:selectItem itemValue="#{15}" itemLabel="Parelhas"/>
+                    <f:selectItem itemValue="#{16}" itemLabel="Parnamirim"/>
+                    <f:selectItem itemValue="#{17}" itemLabel="Pau dos Ferros"/>
+                    <f:selectItem itemValue="#{18}" itemLabel="Santa Cruz"/>
+                    <f:selectItem itemValue="#{19}" itemLabel="São Gonçalo do Amarante"/>
+                    <f:selectItem itemValue="#{20}" itemLabel="São Paulo do Potengi"/>
+                </h:selectOneMenu>
+                <h:commandButton id="Logar" value="Adicionar" type="submit" action="#{Navegacao.adicionar()}"/>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+
